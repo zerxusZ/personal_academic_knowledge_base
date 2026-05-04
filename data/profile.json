@@ -1,0 +1,10 @@
+{
+  "name": "JD",
+  "profession": "researcher",
+  "department": "imunology",
+  "research_interests": [
+    "chimeric antigen receptor"
+  ],
+  "project_description": "The main research field is cancer immunotherapy, particularly engineered immune cell therapy. More specifically, it belongs to the areas of CAR-NK therapy, CAR-T/CAR-NK comparative safety, solid tumor immunotherapy, and preclinical toxicity evaluation. Unlike many CAR studies that focus primarily on anti-tumor efficacy, this paper is more concerned with on-target/off-tumor toxicity, systemic toxicity, biodistribution, and neurotoxicity.\n\nThe biological target is CD147, also known as basigin. CD147 is attractive because it is overexpressed or highly glycosylated in several tumors, including HCC, but it is also present at lower levels in normal tissues such as lung, spleen, liver, and brain. Therefore, the article addresses an important translational problem: whether targeting CD147 is therapeutically useful without unacceptable toxicity in normal tissues.\n\nThe disease model is hepatocellular carcinoma, using SK-Hep1 tumor-bearing human CD147 transgenic NSG mice. The use of human CD147 transgenic mice is important because ordinary mouse CD147 differs from human CD147, making it difficult to evaluate human CD147-directed therapy toxicity in standard mouse models.",
+  "language": "zh"
+}

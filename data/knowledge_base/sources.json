@@ -1,0 +1,68 @@
+{
+  "sources": {
+    "783280f2-8bd": {
+      "id": "783280f2-8bd",
+      "title": "unknown",
+      "content_type": "url",
+      "raw_text": "https://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00026-8",
+      "url": null,
+      "authors": [],
+      "year": null,
+      "tags": {
+        "topics": [
+          "oncology",
+          "cancer research"
+        ],
+        "methods": [
+          "clinical study",
+          "data analysis"
+        ],
+        "concepts": [
+          "treatment mechanisms",
+          "therapeutic strategies"
+        ],
+        "domain": [
+          "medicine",
+          "healthcare"
+        ],
+        "problem_type": [
+          "treatment efficacy",
+          "disease management"
+        ]
+      },
+      "summary": "The text discusses a study on how certain treatments can affect cancer cells. It explores the mechanisms behind these treatments and their potential to improve patient outcomes. The research aims to find better ways to combat cancer.",
+      "key_concepts": [
+        "cancer treatments",
+        "patient outcomes",
+        "research study"
+      ],
+      "notable_quote": "",
+      "cluster_id": "b5dfe478",
+      "cluster_label": "Oncology Research and Treatment",
+      "added_at": "2026-05-04T19:02:55.531512"
+    }
+  },
+  "clusters": {
+    "b5dfe478": {
+      "id": "b5dfe478",
+      "label": "Oncology Research and Treatment",
+      "dominant_tags": [
+        "oncology",
+        "cancer research",
+        "clinical study",
+        "data analysis",
+        "treatment mechanisms",
+        "therapeutic strategies",
+        "medicine",
+        "healthcare",
+        "treatment efficacy",
+        "disease management"
+      ],
+      "source_ids": [
+        "783280f2-8bd"
+      ],
+      "summary": "This cluster focuses on the latest findings in cancer research, including clinical studies and therapeutic strategies to improve treatment efficacy."
+    }
+  },
+  "updated_at": "2026-05-04T19:02:57.356073"
+}

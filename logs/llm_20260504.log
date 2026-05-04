@@ -1,0 +1,56 @@
+2026-05-04 14:48:52.691 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 14:48:52.979 | INFO     | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=190 user_len=1278
+2026-05-04 14:48:52.979 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=You are a research advisor. Given a user profile, return a JSON with: domain_keywords (list of 8 important keywords), suggested_queries (list of 5 academic search queries). Only return JSON.
+2026-05-04 14:48:52.981 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Profession: researcher
+Department: imunology
+Research interests: chimeric antigen receptor
+Project: The main research field is cancer immunotherapy, particularly engineered immune cell therapy. More specifically, it belongs to the areas of CAR-NK therapy, CAR-T/CAR-NK comparative safety, solid tumor immunotherapy, and preclinical toxicity evaluation. Unlike many CAR studies that focus primarily on anti-tumor efficacy, this paper is more concerned with on-target/off-tumor toxicity, systemic toxic
+2026-05-04 14:48:57.449 | INFO     | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 4469ms | prompt_tokens=310 completion_tokens=145 total=455 | reply_len=586
+2026-05-04 14:48:57.449 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "domain_keywords": [
+    "cancer immunotherapy",
+    "chimeric antigen receptor",
+    "CAR-T therapy",
+    "CAR-NK therapy",
+    "solid tumor immunotherapy",
+    "CD147",
+    "toxicity evaluation",
+    "hepatocellular carcinoma"
+  ],
+  "suggested_queries": [
+    "impact of CAR-NK therapy on soli
+2026-05-04 15:02:49.524 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 15:02:49.828 | INFO     | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=1104 user_len=118
+2026-05-04 15:02:49.829 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=
+You are a research librarian who helps non-specialist users understand academic content.
+
+Given a text excerpt, return ONLY a valid JSON object with these exact keys:
+
+{
+  "title": "concise descriptive title (if not already known)",
+  "summary": "2-3 plain sentences, no jargon, explaining the main 
+2026-05-04 15:02:49.829 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Title (if known): unknown
+
+Text:
+https://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00026-8
+2026-05-04 15:02:55.531 | INFO     | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 5702ms | prompt_tokens=319 completion_tokens=154 total=473 | reply_len=667
+2026-05-04 15:02:55.531 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "title": "unknown",
+  "summary": "The text discusses a study on how certain treatments can affect cancer cells. It explores the mechanisms behind these treatments and their potential to improve patient outcomes. The research aims to find better ways to combat cancer.",
+  "key_concepts": ["cancer
+2026-05-04 15:02:55.540 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 15:02:55.835 | INFO     | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=341 user_len=206
+2026-05-04 15:02:55.835 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=
+You are a librarian naming a collection of related sources.
+
+Given a list of tags describing a group of sources, return a JSON object:
+{
+  "label": "Short, human-friendly cluster name (3-6 words, title case)",
+  "summary": "One sentence describing what this cluster is about, for a non-expert reader
+2026-05-04 15:02:55.835 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Tags for this group: oncology, cancer research, clinical study, data analysis, treatment mechanisms, therapeutic strategies, medicine, healthcare, treatment efficacy, disease management
+Number of sources: 1
+2026-05-04 15:02:57.355 | INFO     | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 1519ms | prompt_tokens=128 completion_tokens=40 total=168 | reply_len=213
+2026-05-04 15:02:57.355 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "label": "Oncology Research and Treatment",
+  "summary": "This cluster focuses on the latest findings in cancer research, including clinical studies and therapeutic strategies to improve treatment efficacy."
+}

@@ -1,0 +1,239 @@
+2026-05-04 14:43:41.872 | [32mINFO[0m | main                           | main.py:61 | Launching uvicorn on port 8000
+2026-05-04 14:43:43.327 | DEBUG    | asyncio                        | selector_events.py:54 | Using selector: SelectSelector
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:32 | ============================================================
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:33 | Academic Knowledge Base starting up
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:34 |   default_llm  : openai
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:35 |   openai key   : set
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:36 |   anthropic key: NOT SET
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:37 |   gemini key   : set
+2026-05-04 14:43:43.373 | [32mINFO[0m | main                           | main.py:38 |   docs         : http://localhost:8000/docs
+2026-05-04 14:43:43.374 | [32mINFO[0m | main                           | main.py:39 | ============================================================
+2026-05-04 14:43:53.087 | [32mINFO[0m | http                           | middleware.py:17 | [d9b8b1f8] --> GET /health | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:43:53.090 | DEBUG    | main                           | main.py:54 | health check
+2026-05-04 14:43:53.090 | [32mINFO[0m | http                           | middleware.py:55 | [d9b8b1f8] <-- GET /health | 200 | 3.5ms
+2026-05-04 14:44:14.739 | [32mINFO[0m | http                           | middleware.py:17 | [5c0b2fd9] --> GET / | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:44:14.814 | [32mINFO[0m | http                           | middleware.py:55 | [5c0b2fd9] <-- GET / | 200 | 75.1ms
+2026-05-04 14:44:14.820 | [32mINFO[0m | http                           | middleware.py:17 | [c5cc05fe] --> GET /static/style.css | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:44:14.821 | [32mINFO[0m | http                           | middleware.py:17 | [a969476a] --> GET /static/app.js | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:44:14.823 | [32mINFO[0m | http                           | middleware.py:55 | [c5cc05fe] <-- GET /static/style.css | 200 | 3.5ms
+2026-05-04 14:44:14.824 | [32mINFO[0m | http                           | middleware.py:55 | [a969476a] <-- GET /static/app.js | 200 | 2.5ms
+2026-05-04 14:44:14.862 | [32mINFO[0m | http                           | middleware.py:17 | [76966f07] --> GET /favicon.ico | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:44:14.863 | [33mWARNING[0m | http                           | middleware.py:55 | [76966f07] <-- GET /favicon.ico | 404 | 0.5ms
+2026-05-04 14:48:52.029 | [32mINFO[0m | http                           | middleware.py:17 | [aca5d24e] --> POST /user/profile | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:48:52.029 | DEBUG    | http                           | middleware.py:34 | [aca5d24e]     body(preview)={"name":"JD","profession":"researcher","department":"imunology","research_interests":["chimeric antigen receptor"],"project_description":"The main research field is cancer immunotherapy, particularly engineered immune cell therapy. More specifically, it belongs to the areas of CAR-NK therapy, CAR-T/CAR-NK comparative safety, solid tumor immunotherapy, and preclinical toxicity evaluation. Unlike many CAR studies that focus primarily on anti-tumor efficacy, this paper is more concerned with on-tar
+2026-05-04 14:48:52.691 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 14:48:52.979 | [32mINFO[0m | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=190 user_len=1278
+2026-05-04 14:48:52.979 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=You are a research advisor. Given a user profile, return a JSON with: domain_keywords (list of 8 important keywords), suggested_queries (list of 5 academic search queries). Only return JSON.
+2026-05-04 14:48:52.981 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Profession: researcher
+Department: imunology
+Research interests: chimeric antigen receptor
+Project: The main research field is cancer immunotherapy, particularly engineered immune cell therapy. More specifically, it belongs to the areas of CAR-NK therapy, CAR-T/CAR-NK comparative safety, solid tumor immunotherapy, and preclinical toxicity evaluation. Unlike many CAR studies that focus primarily on anti-tumor efficacy, this paper is more concerned with on-target/off-tumor toxicity, systemic toxic
+2026-05-04 14:48:53.470 | DEBUG    | openai._base_client            | _base_client.py:482 | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-66162abc-8296-4d30-b4bd-629ac9c56a71', 'json_data': {'messages': [{'role': 'system', 'content': 'You are a research advisor. Given a user profile, return a JSON with: domain_keywords (list of 8 important keywords), suggested_queries (list of 5 academic search queries). Only return JSON.'}, {'role': 'user', 'content': 'Profession: researcher\nDepartment: imunology\nResearch interests: chimeric antigen receptor\nProject: The main research field is cancer immunotherapy, particularly engineered immune cell therapy. More specifically, it belongs to the areas of CAR-NK therapy, CAR-T/CAR-NK comparative safety, solid tumor immunotherapy, and preclinical toxicity evaluation. Unlike many CAR studies that focus primarily on anti-tumor efficacy, this paper is more concerned with on-target/off-tumor toxicity, systemic toxicity, biodistribution, and neurotoxicity.\n\nThe biological target is CD147, also known as basigin. CD147 is attractive because it is overexpressed or highly glycosylated in several tumors, including HCC, but it is also present at lower levels in normal tissues such as lung, spleen, liver, and brain. Therefore, the article addresses an important translational problem: whether targeting CD147 is therapeutically useful without unacceptable toxicity in normal tissues.\n\nThe disease model is hepatocellular carcinoma, using SK-Hep1 tumor-bearing human CD147 transgenic NSG mice. The use of human CD147 transgenic mice is important because ordinary mouse CD147 differs from human CD147, making it difficult to evaluate human CD147-directed therapy toxicity in standard mouse models.'}], 'model': 'gpt-4o-mini', 'max_tokens': 1024}}
+2026-05-04 14:48:53.471 | DEBUG    | openai._base_client            | _base_client.py:1528 | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-05-04 14:48:57.443 | DEBUG    | openai._base_client            | _base_client.py:1566 | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Mon, 04 May 2026 18:48:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '9f69aea6cca5e641-IAD', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'personal-xd0ewm', 'openai-processing-ms': '2385', 'openai-project': 'proj_ODeXh9xmKbxnWTqlgQbGmwib', 'openai-version': '2020-10-01', 'x-openai-proxy-wasm': 'v0.1', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '199630', 'x-ratelimit-reset-requests': '8.64s', 'x-ratelimit-reset-tokens': '111ms', 'x-request-id': 'req_9f0ba937955840b6958c375a4d5f3ea7', 'set-cookie': '__cf_bm=f.v9NPX_35LRuMYMWrUhNfG5dTDbbVi2V8moRHkkxz4-1777920533.5624678-1.0.1.1-TcGMbGQoW6ZeQxhFJaHCH.iqJmhkmNw72wnTh7.fEKzKnO9mKVVKcnslq91CJ02usnNXpkqBbGC.6jFwt_LSVX15.otretR1tWYnLklUNguyDS2B0htpidYvi8QmN53l; HttpOnly; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 04 May 2026 19:18:57 GMT', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-05-04 14:48:57.443 | DEBUG    | openai._base_client            | _base_client.py:1574 | request_id: req_9f0ba937955840b6958c375a4d5f3ea7
+2026-05-04 14:48:57.449 | [32mINFO[0m | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 4469ms | prompt_tokens=310 completion_tokens=145 total=455 | reply_len=586
+2026-05-04 14:48:57.449 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "domain_keywords": [
+    "cancer immunotherapy",
+    "chimeric antigen receptor",
+    "CAR-T therapy",
+    "CAR-NK therapy",
+    "solid tumor immunotherapy",
+    "CD147",
+    "toxicity evaluation",
+    "hepatocellular carcinoma"
+  ],
+  "suggested_queries": [
+    "impact of CAR-NK therapy on soli
+2026-05-04 14:48:57.451 | [32mINFO[0m | http                           | middleware.py:55 | [aca5d24e] <-- POST /user/profile | 200 | 5422.1ms
+2026-05-04 14:49:14.975 | [32mINFO[0m | http                           | middleware.py:17 | [ea14e20a] --> GET /search/semantic_scholar | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 14:49:14.975 | DEBUG    | http                           | middleware.py:26 | [ea14e20a]     query_params={'q': 'impact of CAR-NK therapy on solid tumors', 'max_results': '10', 'enrich': 'false', 'save': 'true'}
+2026-05-04 14:49:14.978 | [32mINFO[0m | search.semantic_scholar        | semantic_scholar.py:13 | Semantic Scholar search | query='impact of CAR-NK therapy on solid tumors' max_results=10
+2026-05-04 14:49:15.267 | DEBUG    | search.semantic_scholar        | semantic_scholar.py:19 | SS request | url=https://api.semanticscholar.org/graph/v1/paper/search params={'query': 'impact of CAR-NK therapy on solid tumors', 'limit': 10, 'fields': 'paperId,title,authors,abstract,year,externalIds,fieldsOfStudy,publicationTypes'}
+2026-05-04 14:49:15.531 | DEBUG    | search.semantic_scholar        | semantic_scholar.py:21 | SS response | status=429 latency=250ms
+2026-05-04 14:49:15.533 | [31mERROR[0m | search.semantic_scholar        | semantic_scholar.py:58 | SS error | query='impact of CAR-NK therapy on solid tumors' | 554ms | Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+Traceback (most recent call last):
+  File "C:\Users\Windows\Documents\pro1\academic-kb\services\search\semantic_scholar.py", line 23, in search_semantic_scholar
+    resp.raise_for_status()
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2026-05-04 14:49:15.545 | [31mERROR[0m | http                           | middleware.py:45 | [ea14e20a] <-- EXCEPTION /search/semantic_scholar | 569.4ms | Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+Traceback (most recent call last):
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Windows\Documents\pro1\academic-kb\middleware.py", line 42, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\Documents\pro1\academic-kb\api\routes\search.py", line 37, in ss_search
+    papers = await search_semantic_scholar(q, max_results)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Windows\Documents\pro1\academic-kb\services\search\semantic_scholar.py", line 23, in search_semantic_scholar
+    resp.raise_for_status()
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2026-05-04 14:56:41.525 | DEBUG    | kb.store                       | source_store.py:41 | load_sources | count=0
+2026-05-04 14:56:51.731 | [32mINFO[0m | main                           | main.py:62 | Launching uvicorn on port 8000
+2026-05-04 14:56:53.123 | DEBUG    | asyncio                        | selector_events.py:54 | Using selector: SelectSelector
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:19 | ============================================================
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:20 | Academic Knowledge Base starting up
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:21 |   default_llm  : openai
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:22 |   openai key   : set
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:23 |   anthropic key: NOT SET
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:24 |   gemini key   : set
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:25 |   docs         : http://localhost:8000/docs
+2026-05-04 14:56:53.167 | [32mINFO[0m | main                           | main.py:26 | ============================================================
+2026-05-04 14:56:57.632 | [32mINFO[0m | http                           | middleware.py:17 | [1e4681de] --> GET /sources | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:56:57.632 | [33mWARNING[0m | http                           | middleware.py:55 | [1e4681de] <-- GET /sources | 404 | 0.4ms
+2026-05-04 14:56:57.864 | [32mINFO[0m | http                           | middleware.py:17 | [3575fed6] --> GET /sources/clusters | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:56:57.864 | [33mWARNING[0m | http                           | middleware.py:55 | [3575fed6] <-- GET /sources/clusters | 404 | 0.4ms
+2026-05-04 14:57:14.144 | [32mINFO[0m | http                           | middleware.py:17 | [6e216317] --> GET /openapi.json | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:57:14.172 | [32mINFO[0m | http                           | middleware.py:55 | [6e216317] <-- GET /openapi.json | 200 | 29.2ms
+2026-05-04 14:57:18.479 | [32mINFO[0m | http                           | middleware.py:17 | [98153d15] --> GET /openapi.json | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:57:18.479 | [32mINFO[0m | http                           | middleware.py:55 | [98153d15] <-- GET /openapi.json | 200 | 0.6ms
+2026-05-04 14:57:45.843 | [32mINFO[0m | main                           | main.py:62 | Launching uvicorn on port 8000
+2026-05-04 14:57:47.324 | DEBUG    | asyncio                        | selector_events.py:54 | Using selector: SelectSelector
+2026-05-04 14:57:47.365 | [32mINFO[0m | main                           | main.py:19 | ============================================================
+2026-05-04 14:57:47.366 | [32mINFO[0m | main                           | main.py:20 | Academic Knowledge Base starting up
+2026-05-04 14:57:47.366 | [32mINFO[0m | main                           | main.py:21 |   default_llm  : openai
+2026-05-04 14:57:47.366 | [32mINFO[0m | main                           | main.py:22 |   openai key   : set
+2026-05-04 14:57:47.368 | [32mINFO[0m | main                           | main.py:23 |   anthropic key: NOT SET
+2026-05-04 14:57:47.368 | [32mINFO[0m | main                           | main.py:24 |   gemini key   : set
+2026-05-04 14:57:47.368 | [32mINFO[0m | main                           | main.py:25 |   docs         : http://localhost:8000/docs
+2026-05-04 14:57:47.368 | [32mINFO[0m | main                           | main.py:26 | ============================================================
+2026-05-04 14:57:51.951 | [32mINFO[0m | http                           | middleware.py:17 | [8d28b066] --> GET /openapi.json | client=127.0.0.1 | UA=curl/8.16.0
+2026-05-04 14:57:51.994 | [32mINFO[0m | http                           | middleware.py:55 | [8d28b066] <-- GET /openapi.json | 200 | 42.9ms
+2026-05-04 15:01:40.844 | [32mINFO[0m | http                           | middleware.py:17 | [743cb996] --> GET / | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:40.911 | [32mINFO[0m | http                           | middleware.py:55 | [743cb996] <-- GET / | 200 | 67.3ms
+2026-05-04 15:01:40.940 | [32mINFO[0m | http                           | middleware.py:17 | [81f59e77] --> GET /static/style.css | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:40.941 | [32mINFO[0m | http                           | middleware.py:17 | [e18a245f] --> GET /static/app.js | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:40.943 | [32mINFO[0m | http                           | middleware.py:55 | [81f59e77] <-- GET /static/style.css | 200 | 3.8ms
+2026-05-04 15:01:40.944 | [32mINFO[0m | http                           | middleware.py:55 | [e18a245f] <-- GET /static/app.js | 200 | 3.0ms
+2026-05-04 15:01:41.011 | [32mINFO[0m | http                           | middleware.py:17 | [b858d854] --> GET /sources | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:41.012 | DEBUG    | kb.store                       | source_store.py:41 | load_sources | count=0
+2026-05-04 15:01:41.012 | [32mINFO[0m | http                           | middleware.py:17 | [0a28bc9a] --> GET /sources/clusters | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:41.013 | [32mINFO[0m | http                           | middleware.py:55 | [b858d854] <-- GET /sources | 200 | 2.0ms
+2026-05-04 15:01:41.013 | [32mINFO[0m | http                           | middleware.py:55 | [0a28bc9a] <-- GET /sources/clusters | 200 | 1.0ms
+2026-05-04 15:01:41.795 | [32mINFO[0m | http                           | middleware.py:17 | [28624af9] --> GET /favicon.ico | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:01:41.796 | [33mWARNING[0m | http                           | middleware.py:55 | [28624af9] <-- GET /favicon.ico | 404 | 0.7ms
+2026-05-04 15:02:48.970 | [32mINFO[0m | http                           | middleware.py:17 | [7e0b39f8] --> POST /sources | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:02:48.970 | DEBUG    | http                           | middleware.py:26 | [7e0b39f8]     query_params={'recluster': 'true'}
+2026-05-04 15:02:48.970 | DEBUG    | http                           | middleware.py:34 | [7e0b39f8]     body(preview)={"content":"https://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00026-8"}
+2026-05-04 15:02:48.971 | [32mINFO[0m | routes.sources                 | sources.py:26 | ingest_source | content_preview='https://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00' recluster=True
+2026-05-04 15:02:48.972 | [32mINFO[0m | tagging                        | tagger.py:109 | analyse_source | type=url content_len=85 hint=None
+2026-05-04 15:02:48.972 | [32mINFO[0m | tagging                        | tagger.py:139 | Sending to LLM for tagging | provider=default text_len=85
+2026-05-04 15:02:49.524 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 15:02:49.828 | [32mINFO[0m | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=1104 user_len=118
+2026-05-04 15:02:49.829 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=
+You are a research librarian who helps non-specialist users understand academic content.
+
+Given a text excerpt, return ONLY a valid JSON object with these exact keys:
+
+{
+  "title": "concise descriptive title (if not already known)",
+  "summary": "2-3 plain sentences, no jargon, explaining the main 
+2026-05-04 15:02:49.829 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Title (if known): unknown
+
+Text:
+https://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00026-8
+2026-05-04 15:02:50.161 | DEBUG    | openai._base_client            | _base_client.py:482 | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-7b86da8a-333e-4484-b6b8-5de621af790d', 'json_data': {'messages': [{'role': 'system', 'content': '\nYou are a research librarian who helps non-specialist users understand academic content.\n\nGiven a text excerpt, return ONLY a valid JSON object with these exact keys:\n\n{\n  "title": "concise descriptive title (if not already known)",\n  "summary": "2-3 plain sentences, no jargon, explaining the main idea to a curious non-expert",\n  "key_concepts": ["noun phrase 1", "noun phrase 2", "noun phrase 3"],\n  "notable_quote": "one memorable sentence copied verbatim from the text (or empty string)",\n  "tags": {\n    "topics":       ["broad subject areas, e.g. machine learning, ecology"],\n    "methods":      ["techniques used, e.g. transformer, regression analysis"],\n    "concepts":     ["key ideas, e.g. attention mechanism, gene expression"],\n    "domain":       ["application field, e.g. NLP, climate science, medicine"],\n    "problem_type": ["what it solves, e.g. classification, prediction, discovery"]\n  }\n}\n\nRules:\n- Tags must be lowercase, 1-4 words each\n- Each category: 2-5 tags maximum\n- Summary must be readable by a high-school student\n- Return ONLY the JSON, no markdown fences, no extra text\n'}, {'role': 'user', 'content': 'Title (if known): unknown\n\nText:\nhttps://www.cell.com/molecular-therapy-family/oncology/fulltext/S2950-3299(25)00026-8'}], 'model': 'gpt-4o-mini', 'max_tokens': 1024}}
+2026-05-04 15:02:50.162 | DEBUG    | openai._base_client            | _base_client.py:1528 | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-05-04 15:02:55.525 | DEBUG    | openai._base_client            | _base_client.py:1566 | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Mon, 04 May 2026 19:02:55 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '9f69c3144adbc59e-IAD', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'personal-xd0ewm', 'openai-processing-ms': '3555', 'openai-project': 'proj_ODeXh9xmKbxnWTqlgQbGmwib', 'openai-version': '2020-10-01', 'x-openai-proxy-wasm': 'v0.1', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '199691', 'x-ratelimit-reset-requests': '8.64s', 'x-ratelimit-reset-tokens': '92ms', 'x-request-id': 'req_d393f831d30d46909173e44f9752b45f', 'set-cookie': '__cf_bm=nfhtl3m_vTy0YeiTQuvOzig5fxmod_ZOvTkjgXL6fKc-1777921370.2819664-1.0.1.1-wnYkHUbvej_1YFuoSygBLuIjWU4Tl69w3UQoPmkxihXGMr8mTB5xVwif3f_LVq9G10ZCQt_SpJgad.lD_SKHz7qbgjEutVvn.29NUM.H7AS824SSRSzu8Hi3e0GvVVjR; HttpOnly; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 04 May 2026 19:32:55 GMT', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-05-04 15:02:55.525 | DEBUG    | openai._base_client            | _base_client.py:1574 | request_id: req_d393f831d30d46909173e44f9752b45f
+2026-05-04 15:02:55.531 | [32mINFO[0m | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 5702ms | prompt_tokens=319 completion_tokens=154 total=473 | reply_len=667
+2026-05-04 15:02:55.531 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "title": "unknown",
+  "summary": "The text discusses a study on how certain treatments can affect cancer cells. It explores the mechanisms behind these treatments and their potential to improve patient outcomes. The research aims to find better ways to combat cancer.",
+  "key_concepts": ["cancer
+2026-05-04 15:02:55.531 | [32mINFO[0m | tagging                        | tagger.py:177 | analyse_source done | id=783280f2-8bd title='unknown' tags=10 | 6560ms
+2026-05-04 15:02:55.531 | DEBUG    | tagging                        | tagger.py:181 | tags={'topics': ['oncology', 'cancer research'], 'methods': ['clinical study', 'data analysis'], 'concepts': ['treatment mechanisms', 'therapeutic strategies'], 'domain': ['medicine', 'healthcare'], 'problem_type': ['treatment efficacy', 'disease management']}
+2026-05-04 15:02:55.532 | DEBUG    | kb.store                       | source_store.py:26 | Store saved | sources=1 clusters=0
+2026-05-04 15:02:55.532 | [32mINFO[0m | kb.store                       | source_store.py:35 | save_source | id=783280f2-8bd title='unknown'
+2026-05-04 15:02:55.532 | DEBUG    | kb.store                       | source_store.py:15 | Loading source store from data/knowledge_base/sources.json
+2026-05-04 15:02:55.540 | DEBUG    | kb.store                       | source_store.py:41 | load_sources | count=1
+2026-05-04 15:02:55.540 | [32mINFO[0m | routes.sources                 | sources.py:32 | triggering recluster | total_sources=1
+2026-05-04 15:02:55.540 | [32mINFO[0m | clustering                     | clusterer.py:92 | build_clusters | sources=1 threshold=0.20
+2026-05-04 15:02:55.540 | [32mINFO[0m | clustering                     | clusterer.py:101 | clusters formed: 1
+2026-05-04 15:02:55.540 | DEBUG    | clustering                     | clusterer.py:114 | labelling cluster=b5dfe478 dominant_tags=['oncology', 'cancer research', 'clinical study', 'data analysis', 'treatment mechanisms']
+2026-05-04 15:02:55.540 | DEBUG    | llm.openai                     | openai_service.py:17 | Initialising OpenAI async client
+2026-05-04 15:02:55.835 | [32mINFO[0m | llm.openai                     | openai_service.py:26 | LLM call | provider=openai model=gpt-4o-mini system_len=341 user_len=206
+2026-05-04 15:02:55.835 | DEBUG    | llm.openai                     | openai_service.py:31 | system_prompt=
+You are a librarian naming a collection of related sources.
+
+Given a list of tags describing a group of sources, return a JSON object:
+{
+  "label": "Short, human-friendly cluster name (3-6 words, title case)",
+  "summary": "One sentence describing what this cluster is about, for a non-expert reader
+2026-05-04 15:02:55.835 | DEBUG    | llm.openai                     | openai_service.py:32 | user_prompt=Tags for this group: oncology, cancer research, clinical study, data analysis, treatment mechanisms, therapeutic strategies, medicine, healthcare, treatment efficacy, disease management
+Number of sources: 1
+2026-05-04 15:02:55.837 | DEBUG    | openai._base_client            | _base_client.py:482 | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-1bc70711-a88c-43c6-804f-26e19e0c797a', 'json_data': {'messages': [{'role': 'system', 'content': '\nYou are a librarian naming a collection of related sources.\n\nGiven a list of tags describing a group of sources, return a JSON object:\n{\n  "label": "Short, human-friendly cluster name (3-6 words, title case)",\n  "summary": "One sentence describing what this cluster is about, for a non-expert reader."\n}\n\nReturn ONLY the JSON, no markdown.\n'}, {'role': 'user', 'content': 'Tags for this group: oncology, cancer research, clinical study, data analysis, treatment mechanisms, therapeutic strategies, medicine, healthcare, treatment efficacy, disease management\nNumber of sources: 1'}], 'model': 'gpt-4o-mini', 'max_tokens': 1024}}
+2026-05-04 15:02:55.837 | DEBUG    | openai._base_client            | _base_client.py:1528 | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2026-05-04 15:02:57.354 | DEBUG    | openai._base_client            | _base_client.py:1566 | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Mon, 04 May 2026 19:02:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '9f69c3378d6e81eb-IAD', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'personal-xd0ewm', 'openai-processing-ms': '995', 'openai-project': 'proj_ODeXh9xmKbxnWTqlgQbGmwib', 'openai-version': '2020-10-01', 'x-openai-proxy-wasm': 'v0.1', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9998', 'x-ratelimit-remaining-tokens': '199860', 'x-ratelimit-reset-requests': '12.932s', 'x-ratelimit-reset-tokens': '42ms', 'x-request-id': 'req_54d22c42a4bd998ba79d2ab87f36d043', 'set-cookie': '__cf_bm=.Qx5vUo6r7Z_8z.fe1cJAQjAkBEa._jEOWMYjtRIC30-1777921375.9233515-1.0.1.1-FXblvIHwPWVdzE19w2QvECuVcUf4VLAwk3CsKuqJtifOq72g_JWNiLAGKtBXsE3QhO1r7DjkY5p2NZuBTXQcS0pJSY5pmmo65N9vORkS6bGy3Vhv6aaJZZJpYLzFchAt; HttpOnly; Secure; Path=/; Domain=api.openai.com; Expires=Mon, 04 May 2026 19:32:57 GMT', 'content-encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-05-04 15:02:57.354 | DEBUG    | openai._base_client            | _base_client.py:1574 | request_id: req_54d22c42a4bd998ba79d2ab87f36d043
+2026-05-04 15:02:57.355 | [32mINFO[0m | llm.openai                     | openai_service.py:46 | LLM done  | provider=openai | 1519ms | prompt_tokens=128 completion_tokens=40 total=168 | reply_len=213
+2026-05-04 15:02:57.355 | DEBUG    | llm.openai                     | openai_service.py:53 | reply_preview={
+  "label": "Oncology Research and Treatment",
+  "summary": "This cluster focuses on the latest findings in cancer research, including clinical studies and therapeutic strategies to improve treatment efficacy."
+}
+2026-05-04 15:02:57.355 | [32mINFO[0m | clustering                     | clusterer.py:140 | cluster | id=b5dfe478 label='Oncology Research and Treatment' sources=1 tags=['oncology', 'cancer research', 'clinical study', 'data analysis']
+2026-05-04 15:02:57.355 | [32mINFO[0m | clustering                     | clusterer.py:150 | build_clusters done | 1 clusters | 1815ms
+2026-05-04 15:02:57.355 | DEBUG    | kb.store                       | source_store.py:15 | Loading source store from data/knowledge_base/sources.json
+2026-05-04 15:02:57.356 | DEBUG    | kb.store                       | source_store.py:26 | Store saved | sources=1 clusters=1
+2026-05-04 15:02:57.356 | [32mINFO[0m | kb.store                       | source_store.py:71 | save_clusters | count=1
+2026-05-04 15:02:57.356 | DEBUG    | kb.store                       | source_store.py:15 | Loading source store from data/knowledge_base/sources.json
+2026-05-04 15:02:57.367 | DEBUG    | kb.store                       | source_store.py:41 | load_sources | count=1
+2026-05-04 15:02:57.367 | [32mINFO[0m | http                           | middleware.py:55 | [7e0b39f8] <-- POST /sources | 200 | 8397.3ms
+2026-05-04 15:02:57.377 | [32mINFO[0m | http                           | middleware.py:17 | [be0a064f] --> GET /sources | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:02:57.377 | DEBUG    | kb.store                       | source_store.py:15 | Loading source store from data/knowledge_base/sources.json
+2026-05-04 15:02:57.378 | DEBUG    | kb.store                       | source_store.py:41 | load_sources | count=1
+2026-05-04 15:02:57.378 | [32mINFO[0m | http                           | middleware.py:17 | [8a3075c9] --> GET /sources/clusters | client=127.0.0.1 | UA=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+2026-05-04 15:02:57.378 | DEBUG    | kb.store                       | source_store.py:15 | Loading source store from data/knowledge_base/sources.json
+2026-05-04 15:02:57.379 | [32mINFO[0m | http                           | middleware.py:55 | [be0a064f] <-- GET /sources | 200 | 1.8ms
+2026-05-04 15:02:57.379 | [32mINFO[0m | http                           | middleware.py:55 | [8a3075c9] <-- GET /sources/clusters | 200 | 1.0ms

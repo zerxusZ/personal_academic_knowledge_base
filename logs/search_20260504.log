@@ -1,0 +1,12 @@
+2026-05-04 14:49:14.978 | INFO     | search.semantic_scholar        | semantic_scholar.py:13 | Semantic Scholar search | query='impact of CAR-NK therapy on solid tumors' max_results=10
+2026-05-04 14:49:15.267 | DEBUG    | search.semantic_scholar        | semantic_scholar.py:19 | SS request | url=https://api.semanticscholar.org/graph/v1/paper/search params={'query': 'impact of CAR-NK therapy on solid tumors', 'limit': 10, 'fields': 'paperId,title,authors,abstract,year,externalIds,fieldsOfStudy,publicationTypes'}
+2026-05-04 14:49:15.531 | DEBUG    | search.semantic_scholar        | semantic_scholar.py:21 | SS response | status=429 latency=250ms
+2026-05-04 14:49:15.533 | ERROR    | search.semantic_scholar        | semantic_scholar.py:58 | SS error | query='impact of CAR-NK therapy on solid tumors' | 554ms | Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+Traceback (most recent call last):
+  File "C:\Users\Windows\Documents\pro1\academic-kb\services\search\semantic_scholar.py", line 23, in search_semantic_scholar
+    resp.raise_for_status()
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 763, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 ' for url 'https://api.semanticscholar.org/graph/v1/paper/search?query=impact%20of%20CAR-NK%20therapy%20on%20solid%20tumors&limit=10&fields=paperId%2Ctitle%2Cauthors%2Cabstract%2Cyear%2CexternalIds%2CfieldsOfStudy%2CpublicationTypes'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429

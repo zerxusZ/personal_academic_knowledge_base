@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Knowledge Studio</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <span class="logo">&#128218; Knowledge Studio</span>
+  </div>
+
+  <div class="add-source-box">
+    <textarea id="ingest-input" placeholder="Paste anything&#10;&#10;• arXiv ID: 2307.09288&#10;• arXiv URL&#10;• Text / abstract&#10;• Any note or excerpt"></textarea>
+    <input id="ingest-title" placeholder="Title (optional)" />
+    <input id="ingest-hint" placeholder="Context hint (optional, e.g. "about CRISPR")" />
+    <div class="ingest-row">
+      <select id="llm-select">
+        <option value="">Default LLM</option>
+        <option value="anthropic">Claude</option>
+        <option value="openai">GPT</option>
+        <option value="gemini">Gemini</option>
+      </select>
+      <button id="ingest-btn">+ Add Source</button>
+    </div>
+  </div>
+
+  <div class="sidebar-section-title">Sources <span id="source-count" class="count-badge">0</span></div>
+  <div id="source-list"></div>
+
+  <div class="sidebar-footer">
+    <button id="recluster-btn" class="ghost-btn">&#8635; Re-cluster</button>
+    <button id="export-btn" class="ghost-btn">&#8675; Export KB</button>
+  </div>
+</aside>
+
+<!-- ── Main ── -->
+<main id="main">
+  <div id="welcome" class="welcome-screen">
+    <div class="welcome-inner">
+      <div class="welcome-icon">&#128218;</div>
+      <h1>Your Knowledge Studio</h1>
+      <p>Add your first source on the left — paste an arXiv ID, a URL, or any text excerpt. The system will read it, tag it, and organise it for you automatically.</p>
+      <div class="welcome-examples">
+        <span class="example-chip" data-val="2307.09288">2307.09288</span>
+        <span class="example-chip" data-val="1706.03762">1706.03762 (Attention)</span>
+        <span class="example-chip" data-val="2303.08774">2303.08774 (GPT-4)</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="cluster-view" class="hidden">
+    <div id="cluster-header">
+      <h2 id="cluster-count-label">Your Knowledge Map</h2>
+      <input id="kb-search" placeholder="&#128269; Search across all sources…" />
+    </div>
+    <div id="cluster-grid"></div>
+  </div>
+</main>
+
+<!-- ── Source detail drawer ── -->
+<div id="drawer" class="drawer hidden">
+  <div class="drawer-inner">
+    <button id="drawer-close" class="drawer-close">&#10005;</button>
+    <div id="drawer-content"></div>
+  </div>
+</div>
+<div id="drawer-overlay" class="drawer-overlay hidden"></div>
+
+<!-- ── Loading overlay ── -->
+<div id="loader" class="loader hidden">
+  <div class="loader-inner">
+    <div class="spinner-lg"></div>
+    <p id="loader-msg">Analysing source…</p>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
